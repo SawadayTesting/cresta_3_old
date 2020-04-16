@@ -1,0 +1,1032 @@
+@charset "UTF-8";
+/*!==================================
+	このCSSはSassで記述されていますので
+	直接編集しないで下さい！
+==================================*/
+/* A Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+ul[class] {
+  padding: 0;
+}
+
+body, h1, h2, h3, p, ul[class], dl, dd {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea {
+  font: inherit;
+}
+
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/*==================================
+  共通部分 - タイプセレクタ+見出し+hp-の指定。
+	必要なら、後述のcssで上書きしていく。
+===================================*/
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Noto Serif', 'Noto Serif JP', serif;
+  letter-spacing: .05em;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*色仮置き*/
+
+section {
+  margin-bottom: 100px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/*hp-:ヘルパークラス*/
+.hp-reset {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hp-mb0 {
+  margin-bottom: 0 !important;
+}
+
+.hp-mb25 {
+  margin-bottom: 25px !important;
+}
+
+.hp-mb30 {
+  margin-bottom: 30px !important;
+}
+
+.hp-mb40 {
+  margin-bottom: 40px !important;
+}
+
+.hp-mb55 {
+  margin-bottom: 55px !important;
+}
+
+.hp-mb80 {
+  margin-bottom: 80px !important;
+}
+
+.hp-ml15 {
+  margin-left: 15px !important;
+}
+
+.hp-pb15 {
+  padding-bottom: 15px !important;
+}
+
+.hp-pt100 {
+  padding-top: 100px !important;
+}
+
+.hp-tac {
+  text-align: center !important;
+}
+
+.sp-visible {
+  display: none;
+}
+
+/**
+ * Swiper 5.3.6
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * http://swiperjs.com
+ *
+ * Copyright 2014-2020 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: February 29, 2020
+ */
+@font-face {
+  src: url("data:application/font-woff;charset=utf-8;base64, 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") format("woff");
+  font-family: 'swiper-icons';
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --swiper-theme-color: #007aff;
+}
+
+.swiper-container {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  box-sizing: content-box;
+  display: flex;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  width: 100%;
+  z-index: 1;
+}
+
+
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  width: 100%;
+}
+
+/* Auto Height */
+
+/* 3D Effects */
+
+/* CSS Mode */
+
+:root {
+  --swiper-navigation-size: 44px;
+  /*
+  --swiper-navigation-color: var(--swiper-theme-color);
+  */
+}
+
+:root {
+  /*
+  --swiper-pagination-color: var(--swiper-theme-color);
+  */
+}
+
+/* Common Styles */
+
+/* Bullets */
+
+/* Progress */
+
+/* Scrollbar */
+
+/* Preloader */
+:root {
+  /*
+  --swiper-preloader-color: var(--swiper-theme-color);
+  */
+}
+
+@keyframes swiper-preloader-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* a11y */
+
+/*==================================
+  bl_block - 共通ブロック
+===================================*/
+/*==================================
+  el_element - 共通モジュール
+===================================*/
+.el_button {
+  border: 1px solid #707070;
+  border-radius: 200px;
+  box-shadow: 0 0 6px #1B1310;
+  color: #333;
+  display: block;
+  font-weight: bold;
+  line-height: 3;
+  margin: 0 auto;
+  text-align: center;
+  width: 235px;
+}
+
+.el_button:focus, .el_button:hover {
+  opacity: .5;
+  transition: .5s;
+}
+
+.el_button.el_button__bgcYel {
+  background-color: #F7D43F;
+}
+
+.el_footCopy {
+  color: #171717;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: calc(40px * .05);
+  margin-right: 15px;
+  margin-top: 40px;
+  opacity: .05;
+  padding-bottom: 40px;
+  text-align: right;
+  /*後で場所再検討*/
+}
+
+.el_footCopy.el_footCopy__left {
+  color: #fff;
+  margin-left: 15px;
+  opacity: .1;
+  text-align: left;
+}
+
+.el_lv2heading {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  width: 100%;
+}
+
+.el_lv2heading > span {
+  position: relative;
+}
+
+.el_lv2heading > span::after {
+  border-bottom: 5px solid currentColor;
+  content: "";
+  display: block;
+  left: 100%;
+  margin-left: 30px;
+  position: absolute;
+  top: 50%;
+  width: 100px;
+}
+
+.el_lv2heading.el_lv2heading__white {
+  color: #fff;
+}
+
+.el_lv2heading.el_lv2heading__white > span::after {
+  color: currentColor;
+}
+
+.el_lv2heading.el_lv2heading__right {
+  text-align: right;
+  width: calc(100% - 100px - 30px - 15px);
+}
+
+.el_lv2heading.el_lv2heading__right > span::after {
+  margin-right: 15px;
+}
+
+/*==================================
+  header - ページ共通
+===================================*/
+.ly_header {
+  height: 75px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.ly_header_inner {
+  display: flex;
+  margin: 30px auto 0;
+  width: calc(100% - 30px);
+}
+
+.el_header_tit {
+  color: #fff;
+  flex: 1 1;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*---------------------
+	PCナビ
+----------------------*/
+.bl_header_gnav {
+  display: flex;
+}
+
+.el_header_gnavItem {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.el_header_gnavItem + .el_header_gnavItem {
+  margin-left: 30px;
+}
+
+/*---------------------
+	ハンバーガーメニュー
+----------------------*/
+.nav-drawer {
+  display: none;
+  position: relative;
+}
+
+.nav-unshown {
+  display: none;
+}
+
+#nav-open {
+  display: inline-block;
+  height: 22px;
+  vertical-align: middle;
+  width: 30px;
+}
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  background: #fff;
+  border-radius: 3px;
+  content: '';
+  cursor: pointer;
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 25px;
+}
+
+#nav-open span:before {
+  bottom: -8px;
+}
+
+#nav-open span:after {
+  bottom: -16px;
+}
+
+#nav-content {
+  background: #1B1310;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transform: translateX(-105%);
+  transition: .3s ease-in-out;
+  width: 100%;
+  z-index: 9;
+}
+
+#nav-input:checked ~ #nav-content {
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+  transform: translateX(0%);
+}
+
+.el_hamburgerClose {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  margin: 30px 15px 0 calc(100% - 55px);
+  position: relative;
+  width: 25px;
+}
+
+.el_hamburgerClose span::before,
+.el_hamburgerClose span::after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 16%;
+  left: 50%;
+  margin: -8% 0 0 -42%;
+  position: absolute;
+  top: 50%;
+  width: 84%;
+}
+
+.el_hamburgerClose span::before {
+  transform: rotate(-45deg);
+}
+
+.el_hamburgerClose span::after {
+  transform: rotate(45deg);
+}
+
+.bl_hamburger {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.el_hamburger_item {
+  font-size: 1em;
+  font-style: italic;
+}
+
+.el_hamburger_item + .el_hamburger_item {
+  margin-top: 30px;
+}
+
+/*==================================
+  pages - ページ固有の指定
+===================================*/
+/*==================================
+  index.html - ページ固有の指定
+===================================*/
+.ly_body_inner {
+  position: relative;
+}
+
+/*------------------
+	MV
+-------------------*/
+.bl_MV {
+  height: 100vh;
+  padding-top: -75px;
+  position: relative;
+}
+
+.bl_MV .bl_MV_tit, .bl_MV .bl_MV_subTit {
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  z-index: 5;
+}
+
+.bl_MV_tit {
+  font-size: 37px;
+  left: 15px;
+  letter-spacing: calc(37px * .05);
+  top: calc(136px + 75px);
+}
+
+.bl_MV_subTit {
+  font-size: 30px;
+  left: 50%;
+  letter-spacing: calc(30px * .05);
+  top: 312px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/*------------------
+	concept
+-------------------*/
+.ly_concept {
+  margin: 0 auto;
+  width: calc(100% - 30px);
+  /*innnerを1100にする*/
+}
+
+.el_concept_subTit {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 34px;
+}
+
+.bl_concept_container {
+  display: block;
+}
+
+/*------------------
+	works
+-------------------*/
+.bl_works {
+  background-image: url("../img/works-bgi@2x.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.bl_works_boxContainer {
+  display: flex;
+  margin: 0 auto;
+  max-width: 320px;
+  width: 100%;
+}
+
+.el_works_copy {
+  background-color: #fff;
+  padding: 20px;
+}
+
+/*------------------
+	service
+-------------------*/
+.bl_service {
+  margin-bottom: 64px;
+}
+
+.bl_service_container {
+  display: block;
+}
+
+.bl_service_box {
+  position: relative;
+}
+
+.el_service_copy {
+  color: #fff;
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.el_service_img {
+  object-fit: cover;
+}
+
+.el_service_img:focus, .el_service_img:hover {
+  opacity: .7;
+  transition: .3s;
+}
+
+.el_service_footCopy {
+  margin-right: 120px;
+}
+
+/*フィルター:場所は要移動*/
+.uq-filter {
+  background-color: #000;
+}
+
+/*------------------
+	Contact
+-------------------*/
+.bl_contact {
+  background-image: url("../img/contact-bgi@2x.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bl_contact_inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.el_contact_copy {
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/*==================================
+  contact.html - ページ固有の指定
+===================================*/
+/*------------------
+	contactMV
+-------------------*/
+.ly_contactMV {
+  background-image: url("../img/contact-page-bgi@2x.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 360px;
+  padding-top: -75px;
+  position: relative;
+}
+
+.el_contactMV_tit, .el_contactMV_footCopy {
+  color: #fff;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  left: 50%;
+  letter-spacing: .1em;
+  position: absolute;
+  top: 175px;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.el_contactMV_footCopy {
+  /*優先度で上書きしています*/
+  left: 15px;
+  top: calc(256px -75px);
+  transform: translateX(0);
+}
+
+/*------------------
+	contactForm
+-------------------*/
+.ly_contactForm {
+  margin: 0 auto;
+  width: calc(100% - 30px);
+}
+
+.bl_contactForm dt {
+  font-weight: bold;
+}
+
+.bl_contactForm label {
+  cursor: pointer;
+}
+
+.bl_contactForm input,
+.bl_contactForm textarea {
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.bl_contactForm_chkboxCont {
+  margin-bottom: 11px;
+}
+
+.bl_contactForm_chkboxCont_inner {
+  display: block;
+}
+
+.el_contactForm_chkbox {
+  display: none;
+}
+
+/* チェックボックスの代わりを成すラベル */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label {
+  display: none;
+  display: inline-block;
+  padding-left: 17px;
+  padding-right: 10px;
+  position: relative;
+}
+
+/* ラベルの左に表示させる正方形のボックス□ */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
+  background-color: #FFF;
+  border: 1px solid;
+  border-color: #585753;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+}
+
+/* チェックが入った時のレ点 */
+.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
+  border-bottom: 1.5px solid;
+  border-color: #585753;
+  border-left: 1.5px solid;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 4.5px;
+  left: 1.5px;
+  margin-top: -4.5px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 9px;
+}
+
+/*==================================
+  footer - ページ共通
+===================================*/
+.ly_footer {
+  background-color: #fff;
+  display: flex;
+  height: 72px;
+  width: 100%;
+}
+
+.ly_footer_inner {
+  margin: auto;
+}
+
+.el_copyRights {
+  font-size: .875em;
+}
+
+/*==================================
+  メディアクエリ - ページ共通
+===================================*/
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #666;
+    color: #ddd;
+  }
+  .el_works_copy {
+    background-color: #666;
+  }
+  .ly_footer {
+    background-color: #333;
+    color: #ddd;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sp-visible {
+    display: block !important;
+  }
+  .sp-hidden {
+    display: none !important;
+  }
+  .sp-mb40 {
+    margin-bottom: 40px !important;
+  }
+  .nav-drawer {
+    display: block;
+  }
+  .swiper-slide > img {
+    height: 100vh;
+  }
+  .bl_works_boxContainer {
+    flex-direction: column;
+  }
+  .bl_works_box {
+    margin-top: 30px;
+  }
+  .bl_service_box {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tab-hidden {
+    display: none !important;
+  }
+  .tab-mb80 {
+    margin-bottom: 80px !important;
+  }
+  .el_footCopy {
+    font-size: 90px;
+    padding-bottom: 70px;
+  }
+  .el_footCopy {
+    margin-top: 70px;
+  }
+  .el_footCopy.el_footCopy__left {
+    margin-left: 120px;
+  }
+  .el_lv2heading {
+    font-size: 60px;
+  }
+  .el_lv2heading > span::after {
+    width: 200px;
+  }
+  .el_lv2heading.el_lv2heading__right {
+    width: calc(100% - 200px - 30px - 120px);
+  }
+  .el_lv2heading.el_lv2heading__right > span::after {
+    margin-right: 70px;
+  }
+  .ly_header_inner {
+    margin: 30px auto 0;
+    width: calc(100% - 30px);
+  }
+  .bl_MV_tit {
+    font-size: 70px;
+    left: 60px;
+    top: calc(354px + 75px);
+  }
+  .bl_MV_subTit {
+    font-size: 40px;
+    left: 100px;
+    letter-spacing: calc(40px * .05);
+    top: calc(480px + 75px);
+    transform: translateX(0%);
+  }
+  .swiper-slide > img {
+    height: 100vh;
+    min-width: 100vw;
+  }
+  .ly_concept {
+    width: 90%;
+  }
+  .el_concept_subTit {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .el_concept_copy {
+    margin-right: 40px;
+    max-width: 400px;
+    padding-top: 47px;
+    width: 100%;
+  }
+  .bl_concept_container {
+    display: flex;
+  }
+  .bl_works_boxContainer {
+    max-width: 1000px;
+  }
+  .bl_works_boxContainer {
+    flex-direction: row;
+  }
+  .bl_works_box {
+    max-width: 320px;
+  }
+  .bl_works_box + .bl_works_box {
+    margin-left: 20px;
+  }
+  .bl_service {
+    margin-bottom: 0px;
+  }
+  .bl_service_container {
+    display: flex;
+  }
+  .bl_service_box {
+    margin-bottom: 0;
+  }
+  .el_service_tit {
+    padding-left: 120px;
+  }
+  .el_service_copy {
+    font-size: 1.75em;
+  }
+  .el_contact_copy {
+    font-size: 1.25em;
+  }
+  .el_contactMV_tit, .el_contactMV_footCopy {
+    font-size: 60px;
+  }
+  .ly_contactForm {
+    max-width: 700px;
+    width: 100%;
+  }
+  .bl_contactForm_chkboxCont {
+    margin-bottom: 25px;
+  }
+  .bl_contactForm_chkboxCont_inner {
+    display: flex;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-left: 20px;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .pc-hidden {
+    display: none !important;
+  }
+  .pc-mb80 {
+    margin-bottom: 80px !important;
+  }
+  .el_footCopy {
+    font-size: 90px;
+    padding-bottom: 70px;
+  }
+  .el_footCopy {
+    margin-top: 70px;
+  }
+  .el_footCopy.el_footCopy__left {
+    margin-left: 120px;
+  }
+  .el_lv2heading {
+    font-size: 60px;
+  }
+  .el_lv2heading > span::after {
+    width: 200px;
+  }
+  .el_lv2heading.el_lv2heading__right {
+    width: calc(100% - 200px - 30px - 120px);
+  }
+  .el_lv2heading.el_lv2heading__right > span::after {
+    margin-right: 70px;
+  }
+  .ly_header_inner {
+    margin: 30px auto 0;
+    width: calc(100% - 240px);
+  }
+  .bl_MV_tit {
+    font-size: 70px;
+    left: 120px;
+    top: calc(354px + 75px);
+  }
+  .bl_MV_subTit {
+    font-size: 40px;
+    left: 160px;
+    letter-spacing: calc(40px * .05);
+    top: calc(480px + 75px);
+    transform: translateX(0%);
+  }
+  .swiper-slide > img {
+    height: 100vh;
+    min-width: 100vw;
+  }
+  .ly_concept {
+    max-width: 1100px;
+    width: 100%;
+  }
+  .ly_concept_inner {
+    margin-left: 100px;
+  }
+  .el_concept_subTit {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .el_concept_copy {
+    margin-right: 120px;
+    padding-top: 47px;
+    width: 440px;
+  }
+  .bl_concept_container {
+    display: flex;
+  }
+  .bl_works_boxContainer {
+    max-width: 1000px;
+  }
+  .bl_works_boxContainer {
+    flex-direction: row;
+  }
+  .bl_works_box {
+    max-width: 320px;
+  }
+  .bl_works_box + .bl_works_box {
+    margin-left: 20px;
+  }
+  .bl_service {
+    margin-bottom: 0px;
+  }
+  .bl_service_container {
+    display: flex;
+  }
+  .bl_service_box {
+    margin-bottom: 0;
+  }
+  .el_service_tit {
+    padding-left: 120px;
+  }
+  .el_service_copy {
+    font-size: 2.5em;
+  }
+  .el_contact_copy {
+    font-size: 1.25em;
+  }
+  .el_contactMV_tit, .el_contactMV_footCopy {
+    font-size: 60px;
+  }
+  .ly_contactForm {
+    max-width: 700px;
+    width: 100%;
+  }
+  .bl_contactForm_chkboxCont {
+    margin-bottom: 25px;
+  }
+  .bl_contactForm_chkboxCont_inner {
+    display: flex;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-left: 20px;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-right: 20px;
+  }
+}

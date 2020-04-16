@@ -1,0 +1,84 @@
+@charset "utf-8";
+//	----------------------------------------
+//	変数を指定するクラス
+//	変数にどんな数値を与えたのかを管理するのに使用
+//	大きい部分の色、幅、フォント、ブレイクポイント、mixinを指定。
+//	----------------------------------------
+
+//	色関係の設定	-----------------
+$c-body: #333; //黒文字
+//	ボディの背景色
+$bgc-body: #fff;//ベースカラー
+$bgc-main: #1B1310;//メインカラー
+//	ヘッダーの背景色
+$bgc-header: #1B1310;
+//	フッターの背景色
+$bgc-footer: #fff;
+$bgc-btn: #F7D43F;
+//	幅関係の設定	-----------------
+//	ヘッダーの高さは70~100pxに指定
+$h-header: 75px;
+
+//	z-indexの指定	---------------
+$z-header: 10;
+$z-swiper-container: 1;
+$z-common_copy: 5;
+//	コンテンツの幅
+
+
+//	ブレイクポイント	----------------------
+
+$bp-sp:480px; //スマホ縦
+$bp-tab:481px;//タブレット、スマホ横
+$bp-tabMx:768px;
+$bp-pc:769px; //PC/タブレット縦以上
+//$bp-pcMx:1024px;
+//$bp-wpc:1025px); //ワイドPC以上
+
+
+//	共通モジュール@mixin	-------------------
+
+//	必要なら
+
+//	便利な@mixin	-------------------------
+@mixin reset {
+	margin: 0!important;
+	padding: 0!important;
+}
+//clearfixの指定
+@mixin cf {
+	&::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+//background-imageの指定
+//@include bgi("../img/ファイル名");
+//パスは適宜対応
+@mixin bgi($bgi) {
+	background-image: url($bgi);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+//googlemapをレスポンシブ対応
+//iframeを包むdivタグを作成
+//.div{@include gmap(75or56.25);}にしてください。
+//75 = 4:3
+//56.25 = 16:9
+@mixin gmap($aspect) {
+	& {
+		height: 0;
+		overflow: hidden;
+		padding-bottom: $aspect#{'%'};//アスペクト比の変数
+		position: relative;
+	}
+	& iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+	}
+}

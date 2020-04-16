@@ -1,0 +1,145 @@
+@charset "utf-8";
+/*==================================
+  contact.html - ページ固有の指定
+===================================*/
+/*------------------
+	contactMV
+-------------------*/
+.ly_contactMV {
+	padding-top: -#{$h-header};
+	@include bgi("../img/contact-page-bgi@2x.jpg");
+	height: 360px;
+	position: relative;
+}
+.el_contactMV {
+	&_tit {
+		color: #fff;
+		position: absolute;
+		z-index: #{$z-common_copy};
+		font-size: 30px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			font-size: 60px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			font-size: 60px;
+		}
+		font-weight: bold;
+		font-style: italic;
+		letter-spacing: .1em;
+		top: 175px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&_footCopy {
+		/*優先度で上書きしています*/
+		@extend .el_contactMV_tit;
+		left: 15px;
+		top: calc(256px -#{$h-header});
+		transform: translateX(0);
+	}
+}
+/*------------------
+	contactForm
+-------------------*/
+.ly_contactForm {
+	width: calc(100% - 30px);
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		width: 100%;
+		max-width: 700px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		width: 100%;
+		max-width: 700px;
+	}
+	margin: 0 auto;
+}
+.bl_contactForm {
+	dt {
+		font-weight: bold;
+	}
+	label {
+		cursor: pointer;
+	}
+	input,
+	textarea{
+		border: 1px solid #000;
+		width: 100%;
+	}
+	&_chkboxCont {
+		margin-bottom: 11px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			margin-bottom: 25px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			margin-bottom: 25px;
+		}
+	}
+	&_chkboxCont_inner {
+		display: block;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			display: flex;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			display: flex;
+		}
+	}
+}
+.el_contactForm {
+	&_chkbox {
+		display: none;
+	}
+}
+/* チェックボックスの代わりを成すラベル */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label {
+	display: none;
+	display: inline-block;
+	position: relative;
+	padding-left: 17px;//chkbox10px + 7px
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		padding-left: 20px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		padding-left: 20px;
+	}
+	padding-right: 10px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		padding-right: 20px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		padding-right: 20px;
+	}
+}
+/* ラベルの左に表示させる正方形のボックス□ */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
+	content: "";
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 1px solid;
+	border-color: #585753;
+	//枠の色変更 お好きな色を
+	background-color: #FFF;
+	//背景の色変更 お好きな色を
+}
+/* チェックが入った時のレ点 */
+.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
+	content: "";
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	width: 9px;
+	height: 4.5px;
+	margin-top: -4.5px;
+	top: 50%;
+	left: 1.5px;
+	transform: rotate(-45deg);
+	border-bottom: 1.5px solid;
+	border-left: 1.5px solid;
+	border-color: #585753;
+	//チェックの色変更 お好きな色を
+}

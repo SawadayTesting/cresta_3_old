@@ -1,0 +1,98 @@
+﻿<%# meta.ejsにページの基本情報を指定 %> <%# meta.ejsは安達先生のテンプレを変数化したものです %> <%# index.htmlの下層フォルダに別ページを作る場合、pathの値を'..'にして下さい(代入先参照) %> <%
+const meta = {
+  title: 'クリスタ課題',
+  description: 'クリスタの課題、初級編です。',
+  path: '.'
+};
+%> <%- include('common/_meta',{meta:meta}) %>
+<body>
+<div class="ly_body_inner"> <%- include('common/_header') %>
+	<!-- /.header -->
+	<main class="ly_main">
+		<!--mv-->
+		<section class="ly_mv">
+			<div class="ly_mv_titBox">
+				<h1 class="el_heading el_heading1 hp-reset hp-tac">Cresta Design.</h1>
+			</div>
+			<!-- /.mv_titBox -->
+		</section>
+		<!-- /.ly_mv -->
+		<div class="ly_contentsWrapper">
+			<!--about-->
+			<section class="ly_about uq-anchor" id="lk_about">
+				<h2 class="el_heading el_lv2Heading hp-tac hp-mb75">About</h2>
+				<h3 class="el_heading el_heading3">ミニマルで<br>洗練されたデザインを。</h3>
+					<p class="el_copy">近年、ミニマルなデザインが流行しています。そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。もちろんすべてのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行った上でご提案させていただきます。</p>
+			</section>
+			<!-- /.about -->
+			<!--service-->
+			<section class="ly_service uq-anchor" id="lk_service">
+				<h2 class="el_heading el_lv2Heading hp-tac sp-mb75 pc-mb70">Service</h2>
+				<div class="bl_service_container pc-mb50">
+					<div class="bl_service_copyContainer">
+						<h3 class="el_heading el_heading3 pc-mt0">リリース時のサポートで<br>サービスのブランディングを</h3>
+							<p class="el_copy el_service_copy hp-mb40">弊社では、リリース時もサポートさせて頂きます。プレスリリース用のサイトや動画制作を通じて、サービスのブランディングを行わせていただきます。</p>
+					</div>
+					<!-- /.bl_service_copyContainer -->
+					<p class="dk-visible sp-mb55 hp-tac pc-mtb0 pc-mr70"><img class="el_service_img" decoding="async" src="img/service-image@2x.jpg" alt="カメラの画像"></p>
+				</div>
+				<!-- /.bl_service_Container -->
+				<div class="bl_service_container">
+					<div class="bl_service_copyContainer bl_service_copyContainer02 pc-mr70 pc-mt0">
+						<h3 class="el_heading el_heading3 pc-mt0">リリース後のサポートで<br>効果を最大化させる</h3>
+							<p class="el_copy hp-mb40">弊社では、リリース後もサポートさせて頂きます。サービスはリリース後に様々な課題にぶつかります。そこでクライアント様と一緒に改善を行うこと</p>
+					</div>
+					<!-- /.bl_service_copyContainer -->
+					<p class="dk-visible hp-tac pc-mtb0"><img class="el_service_img" decoding="async" src="img/service-image02@2x.jpg" alt="スマホの画像"></p>
+				</div>
+				<!-- /.bl_service_Container -->
+			</section>
+			<!-- /.service -->
+			<!--news-->
+			<section class="ly_news uq-anchor" id="lk_news">
+				<h2 class="el_heading el_lv2Heading hp-tac hp-mb70">News</h2>
+				<div class="bl_newsContainer">
+					<div class="bl_newsBox hp-mb50 pc-mr35">
+						<p class="hp-reset hp-tac"><a href="#"><img class="el_newsBox_img" decoding="async" src="img/card-image1@2x.jpg" alt="イメージ"></a></p>
+						<p class="el_newsBox_copy pc-mtb0">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+					</div>
+					<!-- /.bl_newsBox -->
+					<div class="bl_newsBox hp-mb50 pc-mr35">
+						<p class="hp-reset hp-tac"><a href="#"><img class="el_newsBox_img" decoding="async" src="img/card-image2@2x.jpg" alt="イメージ"></a></p>
+						<p class="el_newsBox_copy pc-mtb0">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+					</div>
+					<!-- /.bl_newsBox -->
+					<div class="bl_newsBox hp-mb50">
+						<p class="hp-reset hp-tac"><a href="#"><img class="el_newsBox_img" decoding="async" src="img/card-image3@2x.jpg" alt="イメージ"></a></p>
+						<p class="el_newsBox_copy pc-mtb0">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+					</div>
+					<!-- /.bl_newsBox -->
+				</div>
+				<!-- /.bl_newsContainer -->
+			</section>
+			<!-- /.news -->
+			<!--contact-->
+			<section class="ly_contact uq-anchor" id="contact">
+				<h2 class="el_lv3Heading hp-tac hp-mb75">お問い合わせ</h2>
+				<form class="bl_contact_form" action="sample.php" method="post">
+					<p class="hp-reset"><label for="contactName">担当者名</label></p>
+					<input class="el_inputPart" id="contactName" type="text" name="contactName">
+					<p class="hp-reset"><label for="yourPhone">電話番号</label></p>
+					<input class="el_inputPart" id="yourPhone" type="tel" name="yourPhone">
+					<p class="hp-reset"><label for="yourMail">メールアドレス</label></p>
+					<input class="el_inputPart" id="yourMail" type="email" name="yourMail">
+					<p class="hp-reset"><label for="yourQuestion">お問い合わせ内容</label></p>
+					<textarea class="el_inputPart el_inputPart__mb50" id="yourQuestion" rows="12" name="yourMail"></textarea>
+					<p class="bl_contact_btn hp-reset hp-tac hp-mb50">
+						<a class="el_btn hp-tac hp-m0a" href="#">送信</a></p>
+				</form>
+			</section>
+			<!-- /.contact -->
+		</div>
+		<!-- /.ly_contentsWrapper -->
+	</main> <%- include('common/_footer') %>
+	<!-- /.footer -->
+</div>
+<!-- /.ly_body_inner -->
+</body>
+</html>
