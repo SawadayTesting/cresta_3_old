@@ -25,11 +25,10 @@ body {
 	color: #{$c-body};
 }
 //ダークモード対応
-/*色仮置き*/
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: #666;
-		color: #ddd;
+		color: #{$c-body__dk};
+		background-color: #{$bgc-body__dk};
 	}
 }
 //セクション間の余白は150px〜200pxに指定する
@@ -133,8 +132,8 @@ img {
 }
 //position:fixed使用時、ページ内リンクのずれを解消
 .hp-anchor {
-	padding-top: #{$h-header};
-	margin-top:-#{$h-header};
+	padding-top: #{$h-header}!important;
+	margin-top:-#{$h-header}!important;
 }
 .sp-visible {
 	display: none;
