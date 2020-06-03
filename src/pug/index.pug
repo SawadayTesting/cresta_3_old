@@ -1,0 +1,107 @@
+//- タイトルと概要だけ変数化してあります 適宜編集して下さい
+//- パスは基本そのまま。下層ページを作る際に変更する 値:".."
+- var title = 'クリスタ中級編'
+- var pageDescription = 'クリスタ中級編を作成。'
+- var path = '.'
+doctype html
+html(lang="ja" prefix="og: http://ogp.me/ns#")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="description" content=pageDescription)
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		// 検索避けの設定
+		meta(meta name="robots" content="noindex,nofollow")
+		// twitter card,ogp tag
+		meta(meta name="twitter:card" content="summary_large_image")
+		meta(meta name="twitter:site" content="ユーザー名")
+		meta(meta property="og:title" content="クリスタ中級編")
+		meta(meta property="og:type" content="website")
+		meta(meta property="og:url" content="記事のURL")
+		meta(meta property="og:site_name" content="サイト名")
+		meta(meta property="og:image" content="画像URL")
+		meta(meta property="og:description" content="クリスタ中級編を作ってみたよ")
+		// Facebook用の記述
+		meta(property="fb:app_id" content="[app_id]")
+		title #{title}
+		link(rel="stylesheet" href=path + "/css/style.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+		//script(src="js/main.js")
+	body
+		.ly_body_inner
+			include layout/_header.pug
+			///.header
+			section.bl_fv#lk_fv
+				.bl_fvWrapper
+					.bl_fvCopy
+						p.el_copy__white デザインで人を笑顔にする会社
+						p.el_copy__white DIGSMILE INC.
+						h1.el_mainTit DESIGN
+							br
+							| FOR
+							br
+							| SMILE.
+					///.bl_fvCopy
+					picture.bl_fvImg
+						source(media="max-width: 768px" srcset="img/fvImg__sm.jpg, img/fvImg__sm@2x.jpg 2x")
+						source(media="min-width: 769px" srcset="img/fvImg__lg.jpg, img/fvImg__lg@2x.jpg 2x")
+						img.el_fvImg(src="img/fvImg__sm.jpg" srcset="img/fvImg__sm@2x.jpg 2x" alt="子供と母親の画像")
+					///.blfvImg
+				///.bl_fvWrapper
+				figure.bl_fvImg__bg
+					.el_fvImg__bg
+					//画像を使わずCSSで背面の黒地を表現しています。
+			///.fv
+			section.about#lk_about
+				h2.el_secTit ABOUT US
+				p.el_copy DIGSMILEは、デザインで人を笑顔にする会社。
+				|なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+				|DIGSMILEの社名にはそんな想いが込められています。
+				include element/el_btn__about.pug
+			///.bl_about
+			.bl_contentsWrapper
+				section.bl_works#lk_works
+					h2.el_secTit WORKS
+					p.hp_reset
+						img.el_worksImg(src="" alt="制作実績の画像")
+					p.el_copy DIGSMILEの制作実績を紹介します。
+					include element/el_btn__works.pug
+				///.bl_works
+				section.bl_culture#lk_cultule
+				h2.el_secTit CULTURE
+				p.hp_reset
+					img.el_cultureImg(src="" alt="社内文化のイメージ画像")
+				p.el_cultureCopy DIGSMILEの社内文化について紹介します。
+				include element/el_btn__culture.pug
+				///.bl_culture
+			///.bl_contentsWrapper
+			section.bl_topics#lk_topics
+				h2.el_secTit LATEST TOPICS
+				dl.bl_topicsList
+					.bl_topicsList_item
+						dt
+							time(datetime="2020-02-01") 2020.02.01
+						dd イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」
+					.bl_topicsList_item
+						dt
+							time(datetime="2020-01-18") 2020.01.18
+						dd プレスリリースのお知らせ DIGGIN’ RECORDS
+					.bl_topicsList_item
+						dt
+							time(datetime="2020-01-01") 2020.01.01
+						dd 新年明けましておめでとうございます
+				///.bl_topicsList
+				include element/el_btn__topics.pug
+			///.bl_topics
+			section.bl_contact#lk_contact
+			p.hp_reset
+				img.el_cotactImg(src="" alt="お問い合わせのイメージ画像")
+			h2.el_secTit CONTACT
+			p.el_copy 制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。
+			|まずはお気軽にご連絡ください。担当者から改めて返信いたします。
+			include element/el_btn__contact.pug
+			///.bl_contact
+			include layout/_footer.pug
+			///.footer
+		///.ly_body_inner

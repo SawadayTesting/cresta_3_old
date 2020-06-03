@@ -26,136 +26,123 @@
   </head>
   <body>
     <div class="ly_body_inner">
-      <header class="ly_header js_header">
+      <header class="ly_header">
         <div class="ly_header_inner">
-          <p class="el_header_tit"><a href="#">Cresta Design</a></p>
+          <p class="el_header_tit"><a href="#">DIGSMILE INC.</a>
+            <!--バッヂ挿入-->
+          </p>
           <!--ハンバーガーメニュー-->
-          <div class="pc-hidden tab-hidden nav-drawer">
+          <div class="pc_hidden tab_hidden nav-drawer">
             <input class="nav-unshown" id="nav-input" type="checkbox">
             <label id="nav-open" for="nav-input"><span></span></label>
             <div id="nav-content">
               <label class="el_hamburgerClose" for="nav-input"><span></span></label>
               <div class="bl_hamburgerWrapper">
                 <ul class="bl_hamburger">
-                  <li class="el_hamburger_item hp-tac"><a href="index.html#lk_concept">Concept</a></li>
-                  <li class="el_hamburger_item hp-tac"><a href="index.html#lk_service">Service</a></li>
-                  <li class="el_hamburger_item hp-tac"><a href="index.html#lk_works">Works</a></li>
-                  <li class="el_hamburger_item hp-tac"><a href="contact.html">Contact</a></li>
+                  <li class="el_hamburger_item hp_tac">
+                    <!--バッヂ挿入-->
+                  </li>
+                  <li class="el_hamburger_item hp_tac"><a href="pages/about.html">ABOUT US</a></li>
+                  <li class="el_hamburger_item hp_tac"><a href="index.html#lk_works">WORKS</a></li>
+                  <li class="el_hamburger_item hp_tac"><a href="index.html#lk_culture">CULTURE</a></li>
+                  <li class="el_hamburger_item hp_tac"><a href="index.html#lk_topics">TOPICS</a></li>
+                  <li class="el_hamburger_item hp_tac"><a href="pages/contact.html">CONTACT</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <!--PC用ナビゲーション-->
-          <nav class="bl_header_nav sp-hidden">
-            <ul class="bl_header_gnav">
-              <li class="el_header_gnavItem"><a href="index.html#lk_concept">Concept</a></li>
-              <li class="el_header_gnavItem"><a href="index.html#lk_service">Service</a></li>
-              <li class="el_header_gnavItem"><a href="index.html#lk_works">Works</a></li>
-              <li class="el_header_gnavItem"><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
         </div>
       </header>
       <!--/.header-->
-      <section class="bl_MV">
-        <div class="bl_MV_container">
-          <h1 class="bl_MV_tit">Design for Smile.</h1>
-          <p class="bl_MV_subTit hp-tac">快適なオフィスを<br class="sp-visible">デザインする</p>
-        </div>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="img/fv-bgi_01@2x.jpg" alt="オフィスのイメージ"></div>
-            <div class="swiper-slide"><img src="img/fv-bgi_02@2x.jpg" alt="オフィスのイメージ2"></div>
-            <div class="swiper-slide"><img src="img/fv-bgi_03@2x.jpg" alt="オフィスのイメージ3"></div>
+      <section class="bl_fv" id="lk_fv">
+        <div class="bl_fvWrapper">
+          <div class="bl_fvCopy">
+            <p class="el_copy__white">デザインで人を笑顔にする会社</p>
+            <p class="el_copy__white">DIGSMILE INC.</p>
+            <h1 class="el_mainTit">DESIGN<br>FOR<br>SMILE.</h1>
           </div>
-          <!--/.swiper-wrapper-->
+          <!--/.bl_fvCopy-->
+          <picture class="bl_fvImg">
+            <source media="max-width: 768px" srcset="img/fvImg__sm.jpg, img/fvImg__sm@2x.jpg 2x">
+            <source media="min-width: 769px" srcset="img/fvImg__lg.jpg, img/fvImg__lg@2x.jpg 2x"><img class="el_fvImg" src="img/fvImg__sm.jpg" srcset="img/fvImg__sm@2x.jpg 2x" alt="子供と母親の画像">
+          </picture>
+          <!--/.blfvImg-->
         </div>
-        <!--/.swiper-container-->
+        <!--/.bl_fvWrapper-->
+        <figure class="bl_fvImg__bg">
+          <div class="el_fvImg__bg"></div>
+          <!--画像を使わずCSSで背面の黒地を表現しています。-->
+        </figure>
       </section>
-      <!--/.bl_MV-->
-      <div class="ly_contentsWrapper">
-        <section class="ly_concept" id="lk_concept">
-          <div class="ly_concept_inner">
-            <h2 class="el_lv2heading hp-mb55">CONCEPT<span></span></h2>
-            <h3 class="el_concept_subTit">“働きたくなる空間”をデザインすることで<br class="sp-hidden">人々を幸せにする。</h3>
-            <div class="bl_concept_container">
-              <p class="el_concept_copy hp-mb30">私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta Designだからこそできる空間デザインを提供させていただきます。</p>
-              <p class="bl_concept_img hp-mb40"></p><img class="bl_concept_img" src="img/concept-image@2x.jpg" alt="デザインされた空間の画像">
-            </div>
-            <!--/.bl_concept_container-->
-            <p class="el_footCopy el_concept_footCopy">Our Concept</p>
-          </div>
-          <!--/.ly_concept_inner-->
-        </section>
-        <!--/.ly_concept-->
-        <section class="bl_works hp-pt100" id="lk_works">
-          <h2 class="el_lv2heading el_lv2heading__white el_lv2heading__right tab-mb80 pc-mb80">Works<span></span></h2>
-          <div class="bl_works_boxContainer sp-mb40 tab-mb80 pc-mb80">
-            <div class="bl_works_box">
-              <p class="bl_works_img"><img class="el_works_img" src="img/card-img01@2x.jpg" alt="新規サイトの画像"></p>
-              <p class="el_works_copy">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
-            </div>
-            <!--/.bl_works_box-->
-            <div class="bl_works_box">
-              <p class="bl_works_img"><img class="el_works_img" src="img/card-img02@2x.jpg" alt="新規サイトの画像"></p>
-              <p class="el_works_copy">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
-            </div>
-            <!--/.bl_works_box-->
-            <div class="bl_works_box">
-              <p class="bl_works_img"><img class="el_works_img" src="img/card-img03@2x.jpg" alt="新規サイトの画像"></p>
-              <p class="el_works_copy">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
-            </div>
-            <!--/.bl_works_box-->
-          </div>
-          <!--.bl_works_boxContainer--><a class="el_button el_button__bgcYel" href="#">View more</a>
-          <p class="el_footCopy el_footCopy__left">Our Works</p>
+      <!--/.fv-->
+      <section class="about" id="lk_about">
+        <h2 class="el_secTit">ABOUT US</h2>
+        <p class="el_copy">DIGSMILEは、デザインで人を笑顔にする会社。</p>なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+        DIGSMILEの社名にはそんな想いが込められています。
+        <button><a href="pages/about.html">
+            <p>READ MORE</p></a></button>
+      </section>
+      <!--/.bl_about-->
+      <div class="bl_contentsWrapper">
+        <section class="bl_works" id="lk_works">
+          <h2 class="el_secTit">WORKS</h2>
+          <p class="hp_reset"><img class="el_worksImg" src="" alt="制作実績の画像"></p>
+          <p class="el_copy">DIGSMILEの制作実績を紹介します。</p>
+          <button><a href="pages/works.html">
+              <p>READ MORE</p></a></button>
         </section>
         <!--/.bl_works-->
-        <section class="bl_service" id="lk_service">
-          <h2 class="el_service_tit el_lv2heading hp-mb80 hp-ml15">Service<span></span></h2>
-          <div class="bl_service_container">
-            <div class="bl_service_box">
-              <p class="el_service_copy">Hearing</p>
-              <p class="bl_service_img uq-filter"><a href="#"><img class="el_service_img" src="img/service-img01@2x.jpg" alt="Hearingへの画像"></a></p>
-            </div>
-            <!--/.bl_service_box-->
-            <div class="bl_service_box">
-              <p class="el_service_copy">Planning</p>
-              <p class="bl_service_img uq-filter"><a href="#"><img class="el_service_img" src="img/service-img02@2x.jpg" alt="Planningへの画像"></a></p>
-            </div>
-            <!--/.bl_service_box-->
-            <div class="bl_service_box">
-              <p class="el_service_copy">Direction</p>
-              <p class="bl_service_img uq-filter"><a href="#"><img class="el_service_img" src="img/service-img03@2x.jpg" alt="Directionへの画像"></a></p>
-            </div>
-            <!--/.bl_service_box-->
-          </div>
-          <!--/.bl_service_container-->
-          <p class="el_footCopy el_service_footCopy">Our Service</p>
-        </section>
-        <!--/.bl_service-->
-        <section class="bl_contact hp-mb0" id="lk_contact">
-          <h2 class="el_lv2heading el_lv2heading__white el_lv2heading__right hp-pt100 hp-mb80">Contact<span></span></h2>
-          <div class="bl_contact_inner">
-            <p class="el_contact_copy hp-tac hp-mb30">お気軽にご相談ください。</p><a class="el_button el_button__bgcYel" href="./contact.html">Contact</a>
-            <p class="el_footCopy el_footCopy__left">Contact us</p>
-          </div>
-          <!--/.bl_contact_inner-->
-        </section>
-        <!--/.bl_contact-->
+        <section class="bl_culture" id="lk_cultule"></section>
+        <h2 class="el_secTit">CULTURE</h2>
+        <p class="hp_reset"><img class="el_cultureImg" src="" alt="社内文化のイメージ画像"></p>
+        <p class="el_cultureCopy">DIGSMILEの社内文化について紹介します。</p>
+        <button><a href="pages/culture.html">
+            <p>READ MORE</p></a></button>
+        <!--/.bl_culture-->
       </div>
-      <!--/.contentsWrapper-->
+      <!--/.bl_contentsWrapper-->
+      <section class="bl_topics" id="lk_topics">
+        <h2 class="el_secTit">LATEST TOPICS</h2>
+        <dl class="bl_topicsList">
+          <div class="bl_topicsList_item">
+            <dt>
+              <time datetime="2020-02-01">2020.02.01</time>
+            </dt>
+            <dd>イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</dd>
+          </div>
+          <div class="bl_topicsList_item">
+            <dt>
+              <time datetime="2020-01-18">2020.01.18</time>
+            </dt>
+            <dd>プレスリリースのお知らせ DIGGIN’ RECORDS</dd>
+          </div>
+          <div class="bl_topicsList_item">
+            <dt>
+              <time datetime="2020-01-01">2020.01.01</time>
+            </dt>
+            <dd>新年明けましておめでとうございます</dd>
+          </div>
+        </dl>
+        <!--/.bl_topicsList-->
+        <button class="el_btn__topics"><a href="pages/topics.html">
+            <p>READ MORE</p></a></button>
+      </section>
+      <!--/.bl_topics-->
+      <section class="bl_contact" id="lk_contact"></section>
+      <p class="hp_reset"><img class="el_cotactImg" src="" alt="お問い合わせのイメージ画像"></p>
+      <h2 class="el_secTit">CONTACT</h2>
+      <p class="el_copy">制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。</p>まずはお気軽にご連絡ください。担当者から改めて返信いたします。
+      <button class="el_btn__contact"><a href="pages/contact.html">
+          <p>READ MORE</p></a></button>
+      <!--/.bl_contact-->
       <footer class="ly_footer">
         <div class="ly_footer_inner">
-          <p class="el_copyRights"><small>&copy;cresta.design all rights reserved</small></p>
+          <p class="el_copyRights"><small>&copy;2018 DIGSMILE INC.</small></p>
         </div>
         <!--/.footer_inner-->
       </footer>
       <!--/.footer-->
     </div>
     <!--/.ly_body_inner-->
-    <script src="js/header.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="js/main.js"></script>
   </body>
 </html>

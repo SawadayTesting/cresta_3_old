@@ -1,17 +1,14 @@
 @charset "utf-8";
 .ly_footer {
-	width: 100%;
-	height: 72px;
-	background-color: #{$bgc-footer};
-	@media (prefers-color-scheme: dark) {
-		color: #ddd;
-		background-color: #333;
-	}
+	height: 50px;
+	background-color:#525252;
 	display: flex;
 	&_inner {
-		margin: auto; //子要素にmargin: auto;でスマートな中央よせ
+		align-items: center;
+		justify-content: center;
 	}
 }
 .el_copyRights {
-	font-size: .875em;
+	font-size: .625em;
+	text-align: center;
 }

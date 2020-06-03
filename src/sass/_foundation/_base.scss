@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*==================================
-  共通部分 - タイプセレクタ+見出し+hp-の指定。
+  共通部分 - タイプセレクタ+見出し+hp_の指定。
 	必要なら、後述のcssで上書きしていく。
 ===================================*/
 //-----------------------------------
@@ -21,8 +21,8 @@ body {
 	//letter-spacing: .05em〜0.1emで指定する。
 	letter-spacing: .05em;
 	//黒字を見やすく。初期設定は#333にしてあります。
-	//h1~6などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
 	color: #{$c-body};
+	//h1~6などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
 }
 //ダークモード対応
 @media (prefers-color-scheme: dark) {
@@ -53,89 +53,89 @@ img {
 	//object-fit: cover;//適宜
 }
 //見出し
-/*hp-:ヘルパークラス*/
+/*hp_:ヘルパークラス*/
 //@include reset; でもリセットできます
 //reset = m0; p0; です
-.hp-reset {
+.hp_reset {
 	@include reset;
 }
-.hp-m0a {
+.hp_m0a {
 	margin: 0 auto !important;
 }
-.hp-mtb0 {
+.hp_mtb0 {
 	margin-top: 0 !important;
 	margin-bottom: 0 !important;
 }
-.hp-mb0 {
+.hp_mb0 {
 	margin-bottom: 0 !important;
 }
-.hp-mb15 {
+.hp_mb15 {
 	margin-bottom: 15px !important;
 }
-.hp-mb25 {
+.hp_mb25 {
 	margin-bottom: 25px !important;
 }
-.hp-mb30 {
+.hp_mb30 {
 	margin-bottom: 30px !important;
 }
-.hp-mb34 {
+.hp_mb34 {
 	margin-bottom: 34px !important;
 }
-.hp-mb40 {
+.hp_mb40 {
 	margin-bottom: 40px !important;
 }
-.hp-mb50 {
+.hp_mb50 {
 	margin-bottom: 50px !important;
 }
-.hp-mb55 {
+.hp_mb55 {
 	margin-bottom: 55px !important;
 }
-.hp-mb70 {
+.hp_mb70 {
 	margin-bottom: 70px !important;
 }
-.hp-mb75 {
+.hp_mb75 {
 	margin-bottom: 75px !important;
 }
-.hp-mb80 {
+.hp_mb80 {
 	margin-bottom: 80px !important;
 }
-.hp-ml15 {
+.hp_ml15 {
 	margin-left: 15px !important;
 }
-.hp-mr55 {
+.hp_mr55 {
 	margin-right: 55px !important;
 }
-.hp-mt100 {
+.hp_mt100 {
 	margin-top: 100px !important;
 }
-.hp-pb15 {
+.hp_pb15 {
 	padding-bottom: 15px !important;
 }
-.hp-pt40 {
+.hp_pt40 {
 	padding-top: 40px !important;
 }
-.hp-pt100 {
+.hp_pt100 {
 	padding-top: 100px !important;
 }
-.hp-tar {
+.hp_tar {
 	text-align: right !important;
 }
-.hp-tac {
+.hp_tac {
 	text-align: center !important;
 }
-.hp-tal {
+.hp_tal {
 	text-align: left !important;
 }
 //改行の禁止
-.hp-wsnw {
+.hp_wsnw {
 	white-space: nowrap !important;
 }
 //position:fixed使用時、ページ内リンクのずれを解消
-.hp-anchor {
+.hp_anchor {
 	padding-top: #{$h-header}!important;
 	margin-top:-#{$h-header}!important;
 }
-.sp-visible {
+.sp_visible {
 	display: none;
 	@media screen and (max-width:#{$bp-sp}) {
 		display: block !important;
@@ -145,24 +145,24 @@ img {
 //	スマートフォンの指定
 //-----------------------------------
 @media screen and (max-width:#{$bp-sp}) {
-	.sp-hidden {
+	.sp_hidden {
 		display: none !important;
 	}
-	.sp-mb40 {
+	.sp_mb40 {
 		margin-bottom: 40px !important;
 	}
-	.sp-mb55 {
+	.sp_mb55 {
 		margin-bottom: 55px !important;
 	}
-	.sp-mb75 {
+	.sp_mb75 {
 		margin-bottom: 75px !important;
 	}
 }
 @media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-	.tab-hidden {
+	.tab_hidden {
 		display: none !important;
 	}
-	.tab-mb80 {
+	.tab_mb80 {
 		margin-bottom: 80px !important;
 	}
 }
@@ -170,35 +170,35 @@ img {
 //	PCの指定
 //-----------------------------------
 @media screen and (min-width:#{$bp-pc}) {
-	.pc-hidden {
+	.pc_hidden {
 		display: none !important;
 	}
-	.pc-mtb0 {
+	.pc_mtb0 {
 		margin-top: 0 !important;
 		margin-bottom: 0 !important;
 	}
-	.pc-mt0 {
+	.pc_mt0 {
 		margin-top: 0 !important;
 	}
-	.pc-mb50 {
+	.pc_mb50 {
 		margin-bottom: 50px !important;
 	}
-	.pc-mr35 {
+	.pc_mr35 {
 		margin-right: 35px !important;
 	}
-	.pc-mr70 {
+	.pc_mr70 {
 		margin-right: 70px !important;
 	}
-	.pc-mb70 {
+	.pc_mb70 {
 		margin-bottom: 70px !important;
 	}
-	.pc-mb75 {
+	.pc_mb75 {
 		margin-bottom: 75px !important;
 	}
-	.pc-mb80 {
+	.pc_mb80 {
 		margin-bottom: 80px !important;
 	}
-	.pc-flexBox {
+	.pc_flexBox {
 		display: flex !important;
 	}
 }
@@ -206,7 +206,7 @@ img {
 //	ブラウザのダークモードの指定
 //-----------------------------------
 @media (prefers-color-scheme: dark) {
-	.dk-visible {
+	.dk_visible {
 		border: 1px solid #fff;
 	}
 }
