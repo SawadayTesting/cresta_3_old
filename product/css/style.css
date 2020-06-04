@@ -1,18 +1,17 @@
 @charset "UTF-8";
-/*
+/*!
 Theme Name: Cresta 2nd
 Theme URL: テーマのサイトのURI
 Author: Sawada Toshihito
 Description: This is my original theme.
 Version: 1.0
-Tags: テーマの特徴を表すタグ（カンマ区切り/オプション）
+Tags: テーマの特徴を表すタグ(カンマ区切り/オプション)
 License: テーマのライセンス
 License URI: テーマのライセンスのURI
 */
-/*!==================================
-	このCSSはSassで記述されていますので
-	直接編集しないで下さい！
-==================================*/
+/*!===========================================
+このCSSはSassで記述されていますので直接編集しないで下さい！
+================================================*/
 /* A Modern CSS Reset */
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -57,7 +56,7 @@ img:not([alt]) {
 body {
 	background-color: #fff;
 	color: #333;
-	font-family: "Noto Serif", "Noto Serif JP", serif;
+	font-family: "Montserrat Medium Bold", "Montserrat Medium Medium", "Noto Sans JP Regular", "Noto Sans JP Bold Regular", serif;
 	letter-spacing: .05em;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -106,27 +105,25 @@ img {
   header - ページ共通
 ===================================*/
 .ly_header {
-	height: 75px;
+	color: #fff;
+	height: 70px;
 	position: fixed;
 	width: 100%;
-	z-index: 10;
+	z-index: 100;
 }
 .ly_header_inner {
 	display: flex;
-	margin: 30px auto 0;
+	margin: 20px auto 0;
 	width: calc(100% - 30px);
 }
 .el_header_tit {
-	color: #f00 !important;
 	flex: 1 1;
 	font-size: 26px;
-	font-style: italic;
-	font-weight: bold;
 }
-
-/*---------------------
-	PCナビ
-----------------------*/
+.el_header_copy {
+	font-size: .625em;
+	margin-top: 1.5px;
+}
 
 /*---------------------
 	ハンバーガーメニュー
@@ -152,16 +149,16 @@ img {
 	display: block;
 	height: 2px;
 	position: absolute;
-	width: 25px;
+	width: 22px;
 }
 #nav_open span:before {
-	bottom: -8px;
+	bottom: -5px;
 }
 #nav_open span:after {
-	bottom: -16px;
+	bottom: -10px;
 }
 #nav_content {
-	background: #1b1310;
+	background: #222;
 	height: 100%;
 	left: 0;
 	overflow: auto;
@@ -170,7 +167,7 @@ img {
 	transform: translateX(-105%);
 	transition: .3s ease-in-out;
 	width: 100%;
-	z-index: 9;
+	z-index: 9999;
 }
 #nav_input:checked ~ #nav_content {
 	box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
@@ -231,13 +228,13 @@ img {
 .bl_fv {
 	position: relative;
 }
-.bl_fvCopy {
+.bl_fvCopyContainer {
 	position: absolute;
-	z-index: 10;
+	z-index: 5;
 }
 .bl_fvImg {
 	position: absolute;
-	z-index: 5;
+	z-index: 3;
 }
 .bl_fvImg__bg {
 	display: flex;
@@ -248,7 +245,6 @@ img {
 	margin-left: auto;
 	position: relative;
 	width: 75.47vw;
-	z-index: 1;
 }
 
 /*-----------------
@@ -261,7 +257,7 @@ img {
 .bl_aboutCont {
 	background-color: #fff;
 	position: absolute;
-	z-index: 10;
+	z-index: 3;
 }
 
 /*==================================
@@ -270,17 +266,6 @@ img {
 /*------------------
 	contactMV
 -------------------*/
-
-/*------------------
-	contactForm
--------------------*/
-
-/* チェックボックスの代わりを成すラベル */
-
-/* ラベルの左に表示させる正方形のボックス□ */
-
-/* チェックが入った時のレ点 */
-
 /*==================================
   footer - ページ共通
 ===================================*/
@@ -328,10 +313,6 @@ img {
 	.tab_hidden {
 		display: none !important;
 	}
-	.ly_header_inner {
-		margin: 30px auto 0;
-		width: calc(100% - 30px);
-	}
 	.el_fvImg__bg {
 		width: 73.18vw;
 	}
@@ -341,12 +322,7 @@ img {
 	.pc_hidden {
 		display: none !important;
 	}
-	.ly_header_inner {
-		margin: 30px auto 0;
-		width: calc(100% - 240px);
-	}
 	.el_fvImg__bg {
 		width: 54.17vw;
 	}
 }
-/*# sourceMappingURL=maps/style.css.map */

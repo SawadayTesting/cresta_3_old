@@ -1,10 +1,11 @@
 header.ly_header
 	.ly_header_inner
 		p.el_header_tit
-			a(href="#") DIGSMILE INC.
-			//バッヂ挿入
+			a(href="#")
+				span.el_header_badge D
+				|DIGSMILE INC.
 		//ハンバーガーメニュー
-		.pc_hidden.tab_hidden.nav_drawer
+		.nav_drawer.pc_hidden.tab_hidden
 			input#nav_input.nav_unshown(type="checkbox")
 			label#nav_open(for="nav_input")
 				span
@@ -14,7 +15,7 @@ header.ly_header
 				.bl_hamburgerWrapper
 					ul.bl_hamburger
 						li.el_hamburger_item.hp_tac
-							//バッヂ挿入
+							span.el_header_badge D
 						li.el_hamburger_item.hp_tac
 							a(href="pages/about.html") ABOUT US
 						li.el_hamburger_item.hp_tac
@@ -25,3 +26,5 @@ header.ly_header
 							a(href="index.html#lk_topics") TOPICS
 						li.el_hamburger_item.hp_tac
 							a(href="pages/contact.html") CONTACT
+		///.nav_drawer
+		p.el_header_copy MENU

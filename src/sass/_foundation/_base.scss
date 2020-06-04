@@ -8,7 +8,7 @@
 //-----------------------------------
 body {
 	//英語フォント>日本語フォント
-	font-family: 'Noto Serif', 'Noto Serif JP', serif;
+	font-family: 'Montserrat Medium Bold', 'Montserrat Medium Medium', "Noto Sans JP Regular", "Noto Sans JP Bold Regular", serif;
 	//box-sizing: border-box;
 	//ボディのbgc指定
 	background-color: #{$bgc-body};
@@ -22,7 +22,7 @@ body {
 	letter-spacing: .05em;
 	//黒字を見やすく。初期設定は#333にしてあります。
 	color: #{$c-body};
-	//h1~6などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
+	//h1~6,白字などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
 }
 //ダークモード対応
 @media (prefers-color-scheme: dark) {
@@ -136,7 +136,7 @@ img {
 	margin-top:-#{$h-header}!important;
 }
 .sp_visible {
-	display: none;
+	display: none!important;
 	@media screen and (max-width:#{$bp-sp}) {
 		display: block !important;
 	}

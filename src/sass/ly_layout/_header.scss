@@ -1,6 +1,7 @@
 @charset "utf-8";
 //header部分の指定
 .ly_header {
+	color: #{$c-header};
 	height: #{$h-header};
 	width: 100%;
 	position: fixed;
@@ -8,41 +9,16 @@
 	&_inner {
 		display: flex;
 		width: calc(100% - 30px);
-		margin: 30px auto 0;
-		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-			width: calc(100% - 30px);
-			margin: 30px auto 0;
-		}
-		@media screen and(min-width:#{$bp-pc}) {
-			width: calc(100% - 240px);
-			margin: 30px auto 0;
-		}
+		margin: 20px auto 0;
 	}
 }
 .el_header_tit {
-	color: #ff0000!important;
 	font-size: 26px;
-	font-weight: bold;
-	font-style: italic;
 	flex: 1; //ナビゲーションを右に押し出す
 }
-/*---------------------
-	PCナビ
-----------------------*/
-.bl_header {
-	&_gnav {
-		display: flex;
-	}
-}
-.el_header {
-	&_gnavItem {
-		font-size: 1em;
-		font-weight: bold;
-		font-style: italic;
-	}
-	&_gnavItem + &_gnavItem {
-		margin-left: 30px;
-	}
+.el_header_copy {
+	font-size: .625em;
+	margin-top: 1.5px;
 }
 /*---------------------
 	ハンバーガーメニュー
@@ -71,7 +47,7 @@
 	//線の太さ
 	height: 2px;
 	//長さ
-	width: 25px;
+	width: 22px;
 	border-radius: 3px;
 	background: #fff;
 	display: block;
@@ -79,20 +55,20 @@
 	cursor: pointer;
 }
 #nav_open span:before {
-	bottom: -8px;
+	bottom: -5px;
 }
 #nav_open span:after {
-	bottom: -16px;
+	bottom: -10px;
 }
 #nav_content {
 	overflow: auto;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 9;
+	z-index: #{$z-header_nav};
 	width: 100%;
 	height: 100%;
-	background: #{$bgc-main};
+	background: #{$bgc-header_nav};
 	//滑らかに表示
 	transition: .3s ease-in-out;
 	-webkit-transform: translateX(-105%);
