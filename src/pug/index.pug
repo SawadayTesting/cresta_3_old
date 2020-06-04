@@ -53,13 +53,16 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
 					.el_fvImg__bg
 					//画像を使わずCSSで背面の黒地を表現しています。
 			///.fv
-			section.about#lk_about
-				h2.el_secTit ABOUT US
-				p.el_copy DIGSMILEは、デザインで人を笑顔にする会社。
-				|なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
-				|DIGSMILEの社名にはそんな想いが込められています。
-				include element/el_btn__about.pug
-			///.bl_about
+			section.ly_about#lk_about
+				.ly_secInner
+					article.bl_aboutCont
+						h2.el_secTit ABOUT US
+						p.el_copy DIGSMILEは、デザインで人を笑顔にする会社。
+						|なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+						|DIGSMILEの社名にはそんな想いが込められています。
+						include element/el_btn__about.pug
+				///.ly_secInner
+			///.ly_about
 			.bl_contentsWrapper
 				section.bl_works#lk_works
 					h2.el_secTit WORKS

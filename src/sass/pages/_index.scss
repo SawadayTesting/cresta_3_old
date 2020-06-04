@@ -1,8 +1,11 @@
 @charset "utf-8";
-
 /*==================================
   index.html - ページ固有の指定
 ===================================*/
+.ly_secInner {
+	width: calc(100% - 30px);
+	margin: 0 auto;
+}
 /*------------------
 	fv
 -------------------*/
@@ -10,42 +13,41 @@
 	&_fv {
 		position: relative;
 	}
-
 	&_fvCopy {
 		position: absolute;
 		z-index: 10;
 	}
-
 	&_fvImg {
 		position: absolute;
 		z-index: 5;
-
 		&__bg {
 			display: flex;
 		}
 	}
 }
-
 .el_fvImg__bg {
 	position: relative;
 	z-index: 1;
 	margin-left: auto;
-	background-color: #222222;
+	background-color: #222;
 	height: 100vh;
 	width: 75.47vw;
-
 	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
 		width: 73.18vw;
 	}
-
 	@media screen and(min-width:#{$bp-pc}) {
 		width: 54.17vw;
 	}
 }
-
 /*-----------------
 	about
 -------------------*/
-.about {
-	background-image: url(img/);
+.ly_about {
+	position: relative;
+	background: url(../img/about-img__sm.jpg) no-repeat center center / cover;
+}
+.bl_aboutCont {
+	position: absolute;
+	z-index: 10;
+	background-color: #fff;
 }
